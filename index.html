@@ -17,6 +17,11 @@
 <meta name="geo.region" content="EG" />
 <meta name="geo.placename" content="Egypt" />
 
+<!-- Favicon & Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
 <!-- ═══════════════════════════════════════════
      OPEN GRAPH
 ═══════════════════════════════════════════ -->
@@ -63,7 +68,10 @@
     "availableLanguage": ["Arabic", "English"],
     "url": "https://wa.me/201101782890"
   },
-  "sameAs": []
+  "sameAs": [
+    "https://www.facebook.com/cloudwa.services",
+    "https://www.instagram.com/cloudwa.services"
+  ]
 }
 </script>
 
@@ -199,6 +207,83 @@
   .blog-card:hover .blog-read-more { gap: 10px; }
   .blog-read-more { transition: gap .2s ease; }
 </style>
+
+<!-- ═══════════════════════════════════════════
+     META (FACEBOOK) PIXEL
+═══════════════════════════════════════════ -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2141750636373852');
+fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=2141750636373852&ev=PageView&noscript=1" />
+</noscript>
+
+<!-- ═══════════════════════════════════════════
+     TIKTOK PIXEL (جاهز للتفعيل عند توفر الـ ID)
+═══════════════════════════════════════════ -->
+<!--
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track",
+  "identify","instances","debug","on","off","once","ready","alias","group",
+  "enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];
+  ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+  for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+  ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
+  ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;
+  ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=r;ttq._t=ttq._t||{};ttq._t[e]=+new Date;
+  ttq._o=ttq._o||{};ttq._o[e]=n||{};n=document.createElement("script");
+  n.type="text/javascript";n.async=!0;n.src=r+"?sdkid="+e+"&lib="+t;
+  e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('YOUR_TIKTOK_PIXEL_ID');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+-->
+
+<!-- ═══════════════════════════════════════════
+     GOOGLE TAG (GA4 / FIREBASE ANALYTICS)
+═══════════════════════════════════════════ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VSZCSX1L2X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VSZCSX1L2X');
+</script>
+
+<!-- ═══════════════════════════════════════════
+     FIREBASE SDK (MODULAR)
+═══════════════════════════════════════════ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+  import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyB-YOo26kpS5VmiJTXh-VM0ndx-DdJgRUw",
+    authDomain: "aq-whatsapp.firebaseapp.com",
+    databaseURL: "https://aq-whatsapp-default-rtdb.firebaseio.com",
+    projectId: "aq-whatsapp",
+    storageBucket: "aq-whatsapp.appspot.com",
+    messagingSenderId: "50016888650",
+    appId: "1:50016888650:web:5e888bbe53ab6b424fc3b3",
+    measurementId: "G-VSZCSX1L2X"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  window.firebaseAnalytics = { app, analytics, logEvent };
+</script>
 </head>
 
 <body class="antialiased overflow-x-hidden">
@@ -652,17 +737,49 @@
 <!-- ═══════════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════════ -->
-<footer class="border-t border-[var(--color-line)]">
-  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <a href="/" class="flex items-center gap-2" aria-label="Cloudwa">
-      <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-deep)] flex items-center justify-center text-white font-heading font-bold text-xs" aria-hidden="true">Cw</div>
-      <span class="font-heading font-bold text-[var(--color-ink)]">Cloudwa</span>
-    </a>
-    <nav class="flex items-center gap-6 text-sm text-[var(--color-muted)]">
-      <a href="/blog" class="hover:text-[var(--color-primary-deep)] transition font-bold">المدونة</a>
-      <a href="https://wa.me/201101782890" target="_blank" rel="noopener" class="hover:text-[var(--color-primary-deep)] transition font-bold">تواصل معنا</a>
-    </nav>
-    <p class="text-sm text-[var(--color-muted)] text-center">
+<footer class="border-t border-[var(--color-line)] bg-white/40">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <a href="/" class="flex items-center gap-2" aria-label="Cloudwa">
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-deep)] flex items-center justify-center text-white font-heading font-bold text-xs" aria-hidden="true">Cw</div>
+        <span class="font-heading font-bold text-[var(--color-ink)]">Cloudwa</span>
+      </a>
+      <span class="text-xs text-[var(--color-muted)]">• واتساب بيزنس API الرسمي</span>
+    </div>
+
+    <!-- Social Links & Navigation -->
+    <div class="flex items-center gap-6">
+      <nav class="flex items-center gap-5 text-sm text-[var(--color-muted)]">
+        <a href="#services" class="hover:text-[var(--color-primary-deep)] transition font-bold">الخدمات</a>
+        <a href="/blog" class="hover:text-[var(--color-primary-deep)] transition font-bold">المدونة</a>
+        <a href="https://wa.me/201101782890" target="_blank" rel="noopener" class="hover:text-[var(--color-primary-deep)] transition font-bold">تواصل معنا</a>
+      </nav>
+
+      <div class="h-4 w-px bg-[var(--color-line)] hidden sm:block" aria-hidden="true"></div>
+
+      <!-- Social Icons -->
+      <div class="flex items-center gap-3">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/cloudwa.services" target="_blank" rel="noopener" aria-label="Cloudwa on Facebook"
+           class="w-9 h-9 rounded-full bg-[var(--color-primary-soft)] text-[var(--color-primary-deep)] hover:bg-[var(--color-primary)] hover:text-white flex items-center justify-center transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/cloudwa.services" target="_blank" rel="noopener" aria-label="Cloudwa on Instagram"
+           class="w-9 h-9 rounded-full bg-[var(--color-primary-soft)] text-[var(--color-primary-deep)] hover:bg-[var(--color-primary)] hover:text-white flex items-center justify-center transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/201101782890" target="_blank" rel="noopener" aria-label="Cloudwa on WhatsApp"
+           class="w-9 h-9 rounded-full bg-[var(--color-primary-soft)] text-[var(--color-primary-deep)] hover:bg-[var(--color-primary)] hover:text-white flex items-center justify-center transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.44.79 3.06 1.2 4.71 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m0 1.67c2.2 0 4.26.86 5.82 2.42a8.19 8.19 0 012.41 5.82c0 4.55-3.7 8.24-8.24 8.24-1.44 0-2.85-.37-4.09-1.08l-.29-.17-3.14.82.84-3.06-.19-.32a8.2 8.2 0 01-1.26-4.38c0-4.55 3.7-8.24 8.24-8.24z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <p class="text-xs text-[var(--color-muted)] text-center md:text-left">
       Powered by <a href="https://aquadic.com" target="_blank" rel="noopener" class="font-bold text-[var(--color-primary-deep)] hover:underline">AQuadic</a>
       — © <span id="year"></span> جميع الحقوق محفوظة
     </p>
@@ -670,7 +787,7 @@
 </footer>
 
 <!-- ═══════════════════════════════════════════
-     SCRIPTS
+     SCRIPTS & EVENT TRACKING
 ═══════════════════════════════════════════ -->
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -685,57 +802,53 @@
     });
   }, { threshold: 0.12 });
   revealEls.forEach(el => io.observe(el));
+
+  // ── Custom Event Tracking (Meta Pixel & GA4 / Firebase) ──
+  document.querySelectorAll('a[href*="wa.me"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const btnText = btn.textContent.trim() || 'WhatsApp CTA';
+      
+      // Meta Pixel Lead/Contact Event
+      if (typeof fbq === 'function') {
+        fbq('track', 'Contact', {
+          content_name: btnText,
+          content_category: 'WhatsApp Contact'
+        });
+      }
+
+      // GA4 / Firebase Analytics Event
+      if (typeof gtag === 'function') {
+        gtag('event', 'click_whatsapp', {
+          event_category: 'engagement',
+          event_label: btnText
+        });
+      }
+      
+      if (window.firebaseAnalytics && typeof window.firebaseAnalytics.logEvent === 'function') {
+        window.firebaseAnalytics.logEvent(window.firebaseAnalytics.analytics, 'click_whatsapp', {
+          button_text: btnText
+        });
+      }
+    });
+  });
+
+  // ── Scroll Depth Tracking (25%, 50%, 75%, 100%) ──
+  const trackedDepths = [25, 50, 75, 100];
+  const firedDepths = new Set();
+  window.addEventListener('scroll', () => {
+    const scrollHeight = document.body.scrollHeight - window.innerHeight;
+    if (scrollHeight <= 0) return;
+    const pct = Math.round((window.scrollY / scrollHeight) * 100);
+    trackedDepths.forEach(depth => {
+      if (pct >= depth && !firedDepths.has(depth)) {
+        firedDepths.add(depth);
+        if (typeof gtag === 'function') {
+          gtag('event', 'scroll_depth', { percent_scrolled: depth });
+        }
+      }
+    });
+  }, { passive: true });
 </script>
-
-<!--
-  ═══════════════════════════════════════════════════════
-  TRACKING PIXELS — Uncomment and fill in your IDs
-  ═══════════════════════════════════════════════════════
-
-  1. FACEBOOK PIXEL
-  ────────────────
-  <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
-  (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', 'YOUR_FB_PIXEL_ID');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=YOUR_FB_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-
-  2. TIKTOK PIXEL
-  ───────────────
-  <script>
-  !function (w, d, t) {
-    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track",
-    "identify","instances","debug","on","off","once","ready","alias","group",
-    "enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];
-    ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
-    for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
-    ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
-    ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;
-    ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=r;ttq._t=ttq._t||{};ttq._t[e]=+new Date;
-    ttq._o=ttq._o||{};ttq._o[e]=n||{};n=document.createElement("script");
-    n.type="text/javascript";n.async=!0;n.src=r+"?sdkid="+e+"&lib="+t;
-    e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-    ttq.load('YOUR_TIKTOK_PIXEL_ID');
-    ttq.page();
-  }(window, document, 'ttq');
-  </script>
-
-  3. GOOGLE GA4 (Firebase Analytics)
-  ───────────────────────────────────
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
--->
 
 </body>
 </html>
