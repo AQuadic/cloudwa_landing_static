@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cloudwa — واتساب بيزنس، بهدوء واحتراف</title>
+<meta name="description" content="Cloudwa: شريك ميتا الرسمي لواتساب بيزنس API، وحلول أتمتة غير رسمية بمعدل حظر منخفض جدًا. مدعومة من AQuadic." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --font-heading: "El Messiri", "Tajawal", sans-serif;
+    --font-body: "Tajawal", "El Messiri", sans-serif;
+
+    --color-ink: #241a34;
+    --color-muted: #6b6280;
+    --color-primary: #7c3aed;
+    --color-primary-deep: #6b21a8;
+    --color-primary-soft: #f4eeff;
+    --color-line: #e6dbfb;
+    --color-cloud: #fdfcff;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--color-cloud); color: var(--color-ink); }
+  h1, h2, h3, .font-heading { font-family: var(--font-heading); }
+
+  /* ambient float for mascot */
+  @keyframes float-soft {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-14px) rotate(-1deg); }
+  }
+  .float-anim { animation: float-soft 6s ease-in-out infinite; }
+
+  @keyframes drift {
+    0% { transform: translateX(0px); }
+    50% { transform: translateX(18px); }
+    100% { transform: translateX(0px); }
+  }
+  .drift-anim { animation: drift 10s ease-in-out infinite; }
+
+  /* scroll reveal */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .float-anim, .drift-anim { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  .btn-glow { box-shadow: 0 12px 30px -10px rgba(124,58,237,.55); }
+</style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+
+<!-- =============== NAV =============== -->
+<header class="relative z-20">
+  <div class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-9 h-9 rounded-2xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-deep)] flex items-center justify-center text-white font-heading font-bold text-sm shadow-lg shadow-purple-900/10">
+        Cw
+      </div>
+      <span class="font-heading font-bold text-lg text-[var(--color-ink)]">Cloudwa</span>
+    </div>
+    <a href="https://wa.me/201101782890?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%83%D8%AB%D8%B1%20%D8%B9%D9%86%20%D9%83%D9%84%D8%A7%D9%88%D8%AF%D8%A7%20%D9%84%D9%84%D9%88%D8%A7%D8%AA%D8%B3%D8%A7%D8%A8"
+       target="_blank" rel="noopener"
+       class="hidden sm:inline-flex items-center gap-2 rounded-full border border-[var(--color-line)] px-5 py-2.5 text-sm font-bold text-[var(--color-primary-deep)] hover:bg-[var(--color-primary-soft)] transition">
+      تواصل معنا
+    </a>
+  </div>
+</header>
+
+<!-- =============== HERO =============== -->
+<section class="relative pt-6 pb-28 md:pb-36 overflow-hidden">
+  <!-- soft cloud blobs -->
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
+    <div class="drift-anim absolute -top-24 -left-20 w-[380px] h-[380px] rounded-full bg-[radial-gradient(circle,_var(--color-primary-soft)_0%,_transparent_70%)] blur-2xl"></div>
+    <div class="drift-anim absolute top-40 -right-24 w-[420px] h-[420px] rounded-full bg-[radial-gradient(circle,_#ede4ff_0%,_transparent_70%)] blur-2xl" style="animation-delay:-4s"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div class="reveal">
+      <span class="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary-soft)] text-[var(--color-primary-deep)] text-xs font-bold px-4 py-1.5 mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]"></span>
+        Meta Tech Partner الرسمي
+      </span>
+
+      <h1 class="font-heading font-bold text-4xl md:text-5xl leading-[1.25] text-[var(--color-ink)]">
+        واتساب بيزنس، بهدوء
+        <span class="bg-gradient-to-l from-[var(--color-primary)] to-[var(--color-primary-deep)] bg-clip-text text-transparent">واحتراف كامل</span>
+      </h1>
+
+      <p class="mt-6 text-lg text-[var(--color-muted)] leading-loose max-w-lg">
+        من غير ضجة ولا تعقيد، Cloudwa بتوصّل عملك بعملائه على واتساب — سواء من خلال API الرسمي الموثّق من ميتا، أو حل أتمتة سريع بمعدل حظر منخفض جدًا جدًا. بقالنا أكتر من 5 سنين في السوق، ومدعومين من AQuadic.
+      </p>
+
+      <div class="mt-9 flex flex-wrap items-center gap-4">
+        <a href="https://wa.me/201101782890?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%83%D8%AB%D8%B1%20%D8%B9%D9%86%20%D9%83%D9%84%D8%A7%D9%88%D8%AF%D8%A7%20%D9%84%D9%84%D9%88%D8%A7%D8%AA%D8%B3%D8%A7%D8%A8"
+           target="_blank" rel="noopener"
+           class="btn-glow inline-flex items-center gap-2.5 rounded-full bg-gradient-to-l from-[var(--color-primary)] to-[var(--color-primary-deep)] text-white font-bold px-7 py-3.5 hover:opacity-90 transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.44.79 3.06 1.2 4.71 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m0 1.67c2.2 0 4.26.86 5.82 2.42a8.19 8.19 0 012.41 5.82c0 4.55-3.7 8.24-8.24 8.24-1.44 0-2.85-.37-4.09-1.08l-.29-.17-3.14.82.84-3.06-.19-.32a8.2 8.2 0 01-1.26-4.38c0-4.55 3.7-8.24 8.24-8.24z"/></svg>
+          تواصل معنا على واتساب
+        </a>
+        <span class="text-sm text-[var(--color-muted)]">رد سريع، من غير التزام</span>
+      </div>
+
+      <div class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-[var(--color-muted)]">
+        <div class="flex items-center gap-2"><span class="font-heading font-bold text-[var(--color-ink)] text-base">+5</span> سنوات في السوق</div>
+        <div class="w-px h-4 bg-[var(--color-line)] hidden sm:block"></div>
+        <div class="flex items-center gap-2"><span class="font-heading font-bold text-[var(--color-ink)] text-base">Meta</span> Tech Partner</div>
+        <div class="w-px h-4 bg-[var(--color-line)] hidden sm:block"></div>
+        <div class="flex items-center gap-2">شركة تابعة لـ <span class="font-heading font-bold text-[var(--color-ink)]">AQuadic</span></div>
+      </div>
+    </div>
+
+    <div class="reveal flex justify-center md:justify-end">
+      <div class="relative">
+        <div aria-hidden="true" class="absolute inset-0 rounded-full bg-[radial-gradient(circle,_var(--color-primary-soft)_0%,_transparent_65%)] scale-125 -z-10"></div>
+        <img src="cloudwa-mascot.png" alt="ماسكوت Cloudwa يرتدي سماعة دعم فني" class="float-anim w-64 md:w-96 drop-shadow-[0_25px_35px_rgba(107,33,168,0.25)]" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- cloud divider -->
+<div class="relative -mt-1" aria-hidden="true">
+  <svg viewBox="0 0 1440 100" class="w-full h-auto" preserveAspectRatio="none">
+    <path fill="var(--color-primary-soft)" d="M0,60 C240,110 480,10 720,40 C960,70 1200,110 1440,50 L1440,100 L0,100 Z"></path>
+  </svg>
+</div>
+
+<!-- =============== SERVICES =============== -->
+<section class="relative bg-[var(--color-primary-soft)] py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal text-center max-w-2xl mx-auto mb-16">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-[var(--color-ink)]">اختار الطريقة اللي تناسب عملك</h2>
+      <p class="mt-4 text-[var(--color-muted)] text-lg leading-loose">حل رسمي موثّق لو محتاج استقرار واعتماد كامل، أو حل أتمتة سريع لو محتاج تبدأ بسرعة ومرونة.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+
+      <!-- Official -->
+      <div class="reveal rounded-[2rem] bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-deep)] p-8 md:p-10 text-white shadow-2xl shadow-purple-900/20">
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/15 text-xs font-bold px-4 py-1.5 mb-6">
+          موثّق من Meta
+        </span>
+        <h3 class="font-heading font-bold text-2xl mb-3">واتساب بيزنس API الرسمي</h3>
+        <p class="text-white/85 leading-loose mb-7">الخيار الأنسب للشركات اللي محتاجة استقرار كامل واعتماد رسمي من ميتا، مع دعم فني مباشر من فريقنا.</p>
+        <ul class="space-y-3 mb-9">
+          <li class="flex items-start gap-3"><span class="mt-1 w-1.5 h-1.5 rounded-full bg-white shrink-0"></span><span>توثيق واعتماد رسمي من Meta</span></li>
+          <li class="flex items-start gap-3"><span class="mt-1 w-1.5 h-1.5 rounded-full bg-white shrink-0"></span><span>استقرار وأمان على المدى الطويل</span></li>
+          <li class="flex items-start gap-3"><span class="mt-1 w-1.5 h-1.5 rounded-full bg-white shrink-0"></span><span>مناسب للشركات والمؤسسات الكبيرة</span></li>
+          <li class="flex items-start gap-3"><span class="mt-1 w-1.5 h-1.5 rounded-full bg-white shrink-0"></span><span>دعم فني مباشر من فريق Cloudwa</span></li>
+        </ul>
+        <a href="https://wa.me/201101782890?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AA%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%A7%D9%82%D8%A9%20%D9%88%D8%A7%D8%AA%D8%B3%D8%A7%D8%A8%20%D8%A7%D9%84%D8%B1%D8%B3%D9%85%D9%8A%20%28Meta%20API%29"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 rounded-full bg-white text-[var(--color-primary-deep)] font-bold px-6 py-3 hover:bg-white/90 transition">
+          اعرف أكتر
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7 7-7M3 12h18"/></svg>
+        </a>
+      </div>
+
+      <!-- Automation -->
+      <div class="reveal rounded-[2rem] bg-white border border-[var(--color-line)] p-8 md:p-10 shadow-xl shadow-purple-900/5">
+        <span class="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary-soft)] text-[var(--color-primary-deep)] text-xs font-bold px-4 py-1.5 mb-6">
+          معدل حظر منخفض جدًا جدًا
+        </span>
+        <h3 class="font-heading font-bold text-2xl mb-3 text-[var(--color-ink)]">حل الأتمتة السريع</h3>
+        <p class="text-[var(--color-muted)] leading-loose mb-7">حل غير رسمي مبني على أتمتة الويب، مناسب لو عايز تبدأ بسرعة ومن غير إجراءات اعتماد طويلة.</p>
+        <ul class="space-y-3 mb-9 text-[var(--color-ink)]">
+          <li class="flex items-start gap-3"><span class="mt-1 w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0"></span><span>بداية سريعة من غير موافقات ميتا</span></li>
+          <li class="flex items-start gap-3"><span class="mt-1 w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0"></span><span>معدل حظر منخفض جدًا جدًا</span></li>
+          <li class="flex items-start gap-3"><span class="mt-1 w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0"></span><span>مرونة كاملة في التخصيص والأتمتة</span></li>
+          <li class="flex items-start gap-3"><span class="mt-1 w-1.5 h-1.5 rounded-full bg-[var(--color-primary)] shrink-0"></span><span>مناسب للمشاريع الصغيرة والمتوسطة</span></li>
+        </ul>
+        <a href="https://wa.me/201101782890?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AA%D8%B1%20%D8%B9%D9%86%20%D8%AD%D9%84%20%D8%A7%D9%84%D8%A3%D8%AA%D9%85%D8%AA%D8%A9%20%D8%A7%D9%84%D8%B3%D8%B1%D9%8A%D8%B9%20%D9%84%D9%84%D9%88%D8%A7%D8%AA%D8%B3%D8%A7%D8%A8"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 rounded-full bg-gradient-to-l from-[var(--color-primary)] to-[var(--color-primary-deep)] text-white font-bold px-6 py-3 hover:opacity-90 transition">
+          اعرف أكتر
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7 7-7M3 12h18"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- cloud divider (reverse) -->
+<div class="relative bg-[var(--color-primary-soft)]" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" class="w-full h-auto" preserveAspectRatio="none">
+    <path fill="var(--color-cloud)" d="M0,40 C240,0 480,80 720,45 C960,10 1200,60 1440,30 L1440,80 L0,80 Z"></path>
+  </svg>
+</div>
+
+<!-- =============== COMING SOON =============== -->
+<section class="py-14 md:py-16">
+  <div class="reveal max-w-4xl mx-auto px-6">
+    <div class="rounded-3xl border border-dashed border-[var(--color-line)] px-8 py-7 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-right">
+      <div>
+        <p class="text-[var(--color-muted)] text-sm">دلوقتي بنركّز بكل طاقتنا على واتساب</p>
+        <p class="font-heading font-bold text-lg text-[var(--color-ink)] mt-1">وقريبًا هنضيف قنوات تانية</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary-soft)] text-[var(--color-primary-deep)] text-sm font-bold px-4 py-2">Instagram — قريبًا</span>
+        <span class="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary-soft)] text-[var(--color-primary-deep)] text-sm font-bold px-4 py-2">Messenger — قريبًا</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHY CLOUDWA =============== -->
+<section class="py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="reveal text-center max-w-2xl mx-auto mb-16">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-[var(--color-ink)]">ليه Cloudwa؟</h2>
+      <p class="mt-4 text-[var(--color-muted)] text-lg leading-loose">مش مجرد أداة، إحنا فريق شغال في السوق بيفهم احتياجك.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+      <div class="reveal text-center">
+        <div class="mx-auto w-14 h-14 rounded-2xl bg-[var(--color-primary-soft)] flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-[var(--color-primary-deep)]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="font-heading font-bold text-lg text-[var(--color-ink)] mb-2">+5 سنوات خبرة</h3>
+        <p class="text-[var(--color-muted)] text-sm leading-loose">في سوق واتساب بيزنس بالتحديد، مش خبرة عامة.</p>
+      </div>
+      <div class="reveal text-center">
+        <div class="mx-auto w-14 h-14 rounded-2xl bg-[var(--color-primary-soft)] flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-[var(--color-primary-deep)]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="font-heading font-bold text-lg text-[var(--color-ink)] mb-2">شراكة رسمية مع Meta</h3>
+        <p class="text-[var(--color-muted)] text-sm leading-loose">Meta Tech Partner معتمد، وكنا Tech Provider من قبل.</p>
+      </div>
+      <div class="reveal text-center">
+        <div class="mx-auto w-14 h-14 rounded-2xl bg-[var(--color-primary-soft)] flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-[var(--color-primary-deep)]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.09 9.09 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.036.666A11.955 11.955 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+        </div>
+        <h3 class="font-heading font-bold text-lg text-[var(--color-ink)] mb-2">دعم فني حقيقي</h3>
+        <p class="text-[var(--color-muted)] text-sm leading-loose">بتكلم فريق فاهم مشروعك، مش رد آلي بس.</p>
+      </div>
+      <div class="reveal text-center">
+        <div class="mx-auto w-14 h-14 rounded-2xl bg-[var(--color-primary-soft)] flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-[var(--color-primary-deep)]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 001.7-9.7 6 6 0 00-11.4-2.4A4.5 4.5 0 003 15z"/></svg>
+        </div>
+        <h3 class="font-heading font-bold text-lg text-[var(--color-ink)] mb-2">مدعومين من AQuadic</h3>
+        <p class="text-[var(--color-muted)] text-sm leading-loose">شركة برمجيات مصرية، بنية تقنية ثابتة وموثوقة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FINAL CTA =============== -->
+<section class="px-6 pb-6">
+  <div class="reveal max-w-6xl mx-auto rounded-[2.5rem] bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-deep)] relative overflow-hidden">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+      <div class="drift-anim absolute -top-16 left-10 w-64 h-64 rounded-full bg-white/10 blur-2xl"></div>
+      <div class="drift-anim absolute -bottom-20 right-10 w-72 h-72 rounded-full bg-white/10 blur-2xl" style="animation-delay:-5s"></div>
+    </div>
+    <div class="relative px-8 md:px-16 py-16 md:py-20 grid md:grid-cols-2 items-center gap-10">
+      <div class="text-center md:text-right">
+        <h2 class="font-heading font-bold text-3xl md:text-4xl text-white mb-4">جاهز تبدأ مع Cloudwa؟</h2>
+        <p class="text-white/85 leading-loose mb-8 max-w-md mx-auto md:mx-0">ابعتلنا رسالة على واتساب، وفريقنا هيرد عليك بكل التفاصيل اللي محتاجها.</p>
+        <a href="https://wa.me/201101782890?text=%D8%A7%D8%B1%D9%8A%D8%AF%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%83%D8%AB%D8%B1%20%D8%B9%D9%86%20%D9%83%D9%84%D8%A7%D9%88%D8%AF%D8%A7%20%D9%84%D9%84%D9%88%D8%A7%D8%AA%D8%B3%D8%A7%D8%A8"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2.5 rounded-full bg-white text-[var(--color-primary-deep)] font-bold px-7 py-3.5 hover:bg-white/90 transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.44.79 3.06 1.2 4.71 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m0 1.67c2.2 0 4.26.86 5.82 2.42a8.19 8.19 0 012.41 5.82c0 4.55-3.7 8.24-8.24 8.24-1.44 0-2.85-.37-4.09-1.08l-.29-.17-3.14.82.84-3.06-.19-.32a8.2 8.2 0 01-1.26-4.38c0-4.55 3.7-8.24 8.24-8.24z"/></svg>
+          اتكلم معانا دلوقتي
+        </a>
+      </div>
+      <div class="flex justify-center">
+        <img src="cloudwa-mascot.png" alt="ماسكوت Cloudwa" class="float-anim w-40 md:w-56 drop-shadow-2xl" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FOOTER =============== -->
+<footer class="border-t border-[var(--color-line)]">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-deep)] flex items-center justify-center text-white font-heading font-bold text-xs">Cw</div>
+      <span class="font-heading font-bold text-[var(--color-ink)]">Cloudwa</span>
+    </div>
+    <p class="text-sm text-[var(--color-muted)] text-center">
+      Powered by <a href="https://aquadic.com" target="_blank" rel="noopener" class="font-bold text-[var(--color-primary-deep)] hover:underline">AQuadic</a>
+      — © <span id="year"></span> جميع الحقوق محفوظة
+    </p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
